@@ -20,6 +20,8 @@
 
 A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"` to an element within a `{block:RebloggedFrom}` context.
 
+💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
+
 ### 📝 Important notes:
 * Only works if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off* (gray).
 ![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.webp)
