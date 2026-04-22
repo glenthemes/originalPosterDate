@@ -36,7 +36,7 @@ A barebones theme example with this plugin installed:
 
 ### 🚀 How to install:
 
-**Step 1:** Add the after `<head>` in your theme:
+♦️ **Step 1:** Add the after `<head>` in your theme:
 ```html
 <script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -62,7 +62,7 @@ originalPosterDate({
 | `dayWithSuffix` | &#x29BF; `true` adds suffixes to days (English only) (e.g. **9th**, **1st**, **3rd**)<br/>&#x29BF; `false` does not add suffixes (e.g. **9**, **1**, **3**) |
 | `shortYear` | &#x29BF; `true` for the short form of the year (e.g. **‘26**)<br/>&#x29BF; `false` for regular year number (e.g. **2026**) |
 
-**Step 2:** Pinpoint where you'd like to display the original post's date. A common location would be the post's footer bar, but there's no rule of thumb as long as it resides within the following blocks/context:
+♦️ **Step 2:** Pinpoint where you'd like to display the original post's date. A common location would be the post's footer bar, but there's no rule of thumb as long as it resides within the following blocks/context:
 * `{block:Posts}`
 * `{block:Date}`
 * `{block:RebloggedFrom}`
@@ -82,7 +82,7 @@ Example:
 
 If you're puzzled about the structure, you can check out the [🧪 Example theme code](#example-theme-code) if it helps!
 
-**Step 3:** Using that location, add the following:
+♦️ **Step 3:** Using that location, add the following:
 ```html
 <span data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"></span>
 ```
