@@ -23,20 +23,30 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
 
+**How it works:**
+1. We set a custom attribute (`data-original-poster`) for the original poster's username, and another custom attribute (`data-original-post-link`) for the original post's link.
+2. Fetches the original poster's Tumblr blog API, parses the variable it returns as a [JSON object](https://www.w3schools.com/whatis/whatis_json.asp)
+3. Finds `unix-timestamp` value within the object
+4. Formats the unix timestamp into something that's human readable
+
+**Credits:**
+* [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching
+* [ordinal suffixes for dates in JS](https://xjavascript.com/blog/javascript-new-date-ordinal-st-nd-rd-th/#step-2-implement-the-code)
+* Photo in preview by [gregorsams](https://gregorsams.tumblr.com/post/68296679771)
+
+---
+
 ### 📝 Important notes:
 * Only works if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off* (gray).
 ![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.png)
 * Will not work if the original poster's blog has been deleted/deactivated.
 * Does not work in the customize page view (works fine if you visit your blog directly!).
 
+---
+
 ### 🧪 Example theme code:
 A barebones theme example with this plugin installed:  
 [glenthemes.github.io/originalPosterDate/example-theme-code.txt](https://glenthemes.github.io/originalPosterDate/example-theme-code.txt)
-
-**Credits:**
-* [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching
-* [ordinal suffixes for dates in JS](https://xjavascript.com/blog/javascript-new-date-ordinal-st-nd-rd-th/#step-2-implement-the-code)
-* Photo in preview by [gregorsams](https://gregorsams.tumblr.com/post/68296679771)
 
 ---
 
