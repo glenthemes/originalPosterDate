@@ -9,7 +9,7 @@
 #### Table of Contents:
 - 💭 [About](#about)
 - 📝 [Important notes](#important-notes)
-- 🧪 [Example theme code](#example-theme-code)
+- 👁️ [Demos + Previews](#%EF%B8%8Fdemos--previews)
 - 🚀 [How to install](#how-to-install)
 - 🧨 [Further usage](#further-usage)
 - 💖 [Attribution](#attribution)
@@ -44,13 +44,17 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 ---
 
-### 🧪 Example theme codes:
-* A barebones theme example that only gets the original poster's date:<br/>[glenthemes.github.io/originalPosterDate/example/theme-code-basic.txt](https://glenthemes.github.io/originalPosterDate/example/theme-code-basic.txt)
-* A more complex theme example that gets [each reblog's date](https://glenthemes.github.io/originalPosterDate/reblog-trails.png) too:<br/>[glenthemes.github.io/originalPosterDate/example/theme-code-reblogs.txt](https://glenthemes.github.io/originalPosterDate/example/theme-code-reblogs.txt)
+### 👁️ Demos + Previews:
+| Context | Demo | Code |
+| --- | --- | --- |
+| Dates on **each reblog** (modern captions) | [view](https://glenthemes.github.io/originalPosterDate/demos/reblogs) | [example theme code](https://glenthemes.github.io/originalPosterDate/theme-code/reblogs.txt) |
+| Dates on **original poster only** | [view](https://glenthemes.github.io/originalPosterDate/demos/original-poster-only) | [example theme code](https://glenthemes.github.io/originalPosterDate/theme-code/original-poster-only.txt) |
 
 ---
 
 ### 🚀 How to install:
+
+The following instructions are for showing the original poster's date only. You are welcome to view the [example theme code for reblogs](https://glenthemes.github.io/originalPosterDate/theme-code/reblogs.txt), just bear in mind that it uses modern captions and not old/legacy ones.
 
 ♦️ **Step 1:** Add the after `<head>` in your theme:
 ```html
