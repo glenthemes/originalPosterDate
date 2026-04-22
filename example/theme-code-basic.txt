@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
 
+<!-- generic theme info -->
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+
 <!-- axios -->
 <script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -17,10 +21,6 @@ originalPosterDate({
     shortYear: false // true for ‘26, false for 2026
 })
 </script>
-
-<!-- generic theme info -->
-<title>{Title}</title>
-<link rel="shortcut icon" href="{Favicon}">
 
 <!-- example customize panel options -->
 {block:Options}
