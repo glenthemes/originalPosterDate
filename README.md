@@ -1,6 +1,6 @@
 ### 🗓️ originalPosterDate plugin
 
-![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/preview-r.png)
+![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/banner-r.png)
 
 ###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/21 8:42PM [PST]
 
@@ -31,6 +31,7 @@ A barebones theme example with this plugin installed:
 
 **Credits:**
 * [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching.
+* Photo in preview by [gregorsams](https://gregorsams.tumblr.com/post/68296679771)
 
 ---
 
