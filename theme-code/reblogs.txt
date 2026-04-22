@@ -11,7 +11,7 @@
 
 <!-----  originalPosterDate by glenthemes  ----->
 <!-- github.com/glenthemes/originalPosterDate -->
-<script src="//glenthemes.github.io/originalPosterDate/get.js"></script>
+<script src="//glenthemes.github.io/originalPosterDate/dates.js"></script>
 <script>
 originalPosterDate({
     langLocaleCode: "en", // language (locale) code
@@ -38,20 +38,23 @@ body {
     color:#383c45;
 }
 
+/* container */
 #container {
     margin:50px auto;
-    width:540px;
+    width:500px;
     display:grid;
     grid-auto-flow:row;
     row-gap:35px;
 }
 
+/* basics */
 #container iframe, #container video {
     display:block;
     width:100%;
     max-width:100%;
 }
 
+/* basics */
 img {
     vertical-align:middle;
     max-width:100%;
@@ -71,16 +74,20 @@ blockquote {
     margin-right:0;
 }
 
+/* posts */
 .posts {
     position:relative;
 }
 
+/* reblog header */
 .reblog-user-header, .question-header, .answer-header {
     display:flex;
     align-items:center;
+    justify-content:space-between;
     column-gap:12px;
 }
 
+/* reblog header: avatars */
 .reblog-user-header img, .question-header img, .answer-header img {
     display:block;
     width:44px;
@@ -89,20 +96,27 @@ blockquote {
     font-size:1rem;
 }
 
-.reblog-user-header a, .question-header a, .answer-header a {
+/* reblog header: usernames */
+.reblog-user-header a {
+    flex:1;
+    display:flex;
+    justify-content:space-between;
     font-weight:bold;
     text-decoration:none;
 }
 
+/* reblogs: spacing */
 .reblog-entry:not(:first-child), .question + .answer {
     margin-top:15px;
 }
 
-.question-content, .answer-content {
+.question-content:not(:has(> :is(p,h1,h2,h3,h4,h5,h6,blockquote):first-child)){
     margin-top:1em;
 }
 
+/* post footer */
 .posts footer {
+    margin-top:15px;
     display:flex;
     justify-content:space-between;
     gap:1em;
@@ -112,11 +126,12 @@ blockquote {
     text-align:right;
 }
 
+/* post dividers */
 .posts + hr {
     display:block;
     width:100%;
     height:1px;
-    background:#efefef;
+    background:#e9e9e9;
     border:none;
 }
 
@@ -451,6 +466,7 @@ blockquote {
         <!---- POST FOOTER / INFO BAR ---->
         {block:Date}
         <footer>
+            <!-- post footer: left: "posted" or "reblogged" -->
             <a href="{Permalink}">
                 {block:NotReblog}
                 {PostAuthorName} posted this
@@ -461,18 +477,13 @@ blockquote {
                 {/block:RebloggedFrom}
             </a>
             
-            {block:NotReblog}
-            <a href="{Permalink}">
-                {TimeAgo}
-            </a>
-            {/block:NotReblog}
-            
+            <!-- post footer: right: original poster name -->
             {block:RebloggedFrom}
             <a href="{ReblogRootURL}">
-                Originally by {ReblogRootName}
+                {lang:Originally from ReblogRootName}
             </a>
             {/block:RebloggedFrom}
-        </footer>
+        </footer><!--end post-footer-->
         {/block:Date}
     
     </div><!--end posts-->

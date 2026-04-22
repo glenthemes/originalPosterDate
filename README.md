@@ -58,7 +58,7 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 <!-----  originalPosterDate by glenthemes  ----->
 <!-- github.com/glenthemes/originalPosterDate -->
-<script src="//glenthemes.github.io/originalPosterDate/get.js"></script>
+<script src="//glenthemes.github.io/originalPosterDate/dates.js"></script>
 <script>
 originalPosterDate({
     langLocaleCode: "en", // language (locale) code
