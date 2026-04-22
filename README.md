@@ -1,6 +1,6 @@
 ### 🗓️ originalPosterDate plugin
 
-![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://file.garden/ZRt8jW_MomIqlrfn/tbd/preview-r.png)
+![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/preview-r.png)
 
 ###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/21 8:42PM [PST]
 
@@ -9,6 +9,7 @@
 #### Table of Contents:
 - 💭 [About](#about)
 - 📝 [Important notes](#important-notes)
+- 🧪 [Example theme code](#example-theme-code)
 - 🚀 [How to install](#how-to-install)
 - 💖 [Attribution](#attribution)
 - 🙋 [Questions?](#questions)
@@ -23,6 +24,10 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 * Will not work if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off*.
 * Will not work if the original poster's blog has been deleted/deactivated.
 * Does not work in the customize page view (works fine if you visit your blog directly!).
+
+### 🧪 Example theme code:
+A barebones theme example with this plugin installed:  
+[glenthemes.github.io/originalPosterDate/example-theme-code.txt](https://glenthemes.github.io/originalPosterDate/example-theme-code.txt)
 
 **Credits:**
 * [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching.
@@ -74,6 +79,8 @@ Example:
 </article>
 {/block:Posts}
 ```
+
+If you're puzzled about the structure, you can check out the [🧪 Example theme code](#example-theme-code) if it helps!
 
 **Step 3:** Using that location, add the following:
 ```html
