@@ -153,6 +153,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- text posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -186,6 +188,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- photo posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -219,6 +223,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- photoset posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -271,6 +277,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- link posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -329,6 +337,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- audio posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -362,6 +372,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- video posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
@@ -393,7 +405,11 @@ blockquote {
                     <img class="answerer-avatar" src="{AnswererPortraitURL-64}">
                     <div class="answerer">
                         <a href="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}">
-                        {lang:Answered} <span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{PlaintextAnswerer}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>:
+                            {lang:Answered}
+                            
+                            <!-- ask posts: ANSWERED: date -->
+                            <!-- NOTE: ask posts (only the original answer) are special in that {Username} must be swapped out for {PlaintextAnswerer} -->
+                            <span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{PlaintextAnswerer}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>:
                         </a>
                     </div>
                 </div>
@@ -417,6 +433,8 @@ blockquote {
                     <img src="{PortraitURL-64}">
                     <a href="{Permalink}">
                         {Username}
+
+                        <!-- ask posts: reblogs: date -->
                         <span data-original-poster="{block:IsOriginalEntry}{ReblogRootName}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Username}{/block:IsNotOriginalEntry}" data-original-post-link="{block:IsOriginalEntry}{ReblogRootURL}{/block:IsOriginalEntry}{block:IsNotOriginalEntry}{Permalink}{/block:IsNotOriginalEntry}"></span>
                     </a>
                 </div>
