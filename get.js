@@ -92,7 +92,7 @@ window.originalPosterDate = async (options) => {
                         // the final output
                         // e.g. January 27th, 2016
                         let formatted = `${ month } ${ day }, ${ yr }`
-                        piece.dataset.timestamp = timestamp // records e.g. data-timestamp="1770581273"
+                        piece.dataset.timestamp = timestamp * 1000 // records e.g. data-timestamp="1770581273"
                         piece.textContent = formatted
                         piece.classList.add("fetched","fetch-ok")
                     }
