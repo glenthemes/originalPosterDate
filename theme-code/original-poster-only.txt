@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- generic theme info -->
+<title>{Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+
+<!-- axios -->
+<script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-----  originalPosterDate by glenthemes  ----->
+<!-- github.com/glenthemes/originalPosterDate -->
+<script src="//glenthemes.github.io/originalPosterDate/dates.js"></script>
+<script>
+originalPosterDate({
+    langLocaleCode: "en", // language (locale) code
+    shortMonth: false, // true for "Feb", false for "February"
+    dayWithZero: true, // true for 09, false for 9
+    dayWithSuffix: true, // true for 21st, false for 21
+    shortYear: false // true for ‘26, false for 2026
+})
+</script>
+
+<!-- tumblr font (Favorit) -->
+<link href="//assets.tumblr.com/fonts/favorit/stylesheet.css" rel="stylesheet">
+
+<!-- example customize panel options -->
+{block:Options}
+<meta name="color:links" content="#000000">
+{/block:Options}
+
+<!-- example styling -->
+<style>
+body {
+    background:#fcfcfc;
+    font:normal 0.95rem/1.75 "Favorit", sans-serif;
+    color:#383c45;
+}
+
+/* container */
+#container {
+    margin:50px auto;
+    width:500px;
+    display:grid;
+    grid-auto-flow:row;
+    row-gap:35px;
+}
+
+/* basics */
+#container iframe, #container video {
+    display:block;
+    width:100%;
+    max-width:100%;
+}
+
+/* basics */
+img {
+    vertical-align:middle;
+    max-width:100%;
+}
+
+a {
+    color:{color:links};
+    text-decoration:underline currentColor 1.5px;
+    text-underline-offset:0.175em;
+    text-decoration-skip-ink:auto;
+}
+
+blockquote {
+    border-left:3px solid #ededed;
+    margin-left:21px;
+    padding-left:21px;
+    margin-right:0;
+}
+
+/* posts */
+.posts {
+    position:relative;
+}
+
+/* reblog header */
+.reblog-user-header, .question-header, .answer-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    column-gap:12px;
+}
+
+/* reblog header: avatars */
+.reblog-user-header img, .question-header img, .answer-header img {
+    display:block;
+    width:44px;
+    border-radius:100%;
+    flex-shrink:0;
+    font-size:1rem;
+}
+
+/* reblog header: usernames */
+.reblog-user-header a {
+    flex:1;
+    display:flex;
+    justify-content:space-between;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* reblogs: spacing */
+.reblog-entry:not(:first-child), .question + .answer {
+    margin-top:15px;
+}
+
+.question-content:not(:has(> :is(p,h1,h2,h3,h4,h5,h6,blockquote):first-child)){
+    margin-top:1em;
+}
+
+/* post footer */
+.posts footer {
+    margin-top:15px;
+    display:flex;
+    justify-content:space-between;
+    gap:1em;
+}
+
+.posts footer > a:last-child {
+    text-align:right;
+}
+
+/* post dividers */
+.posts + hr {
+    display:block;
+    width:100%;
+    height:1px;
+    background:#e9e9e9;
+    border:none;
+}
+
+.posts + hr:last-child {
+    display:none;
+}
+</style>
+
+</head>
+
+<body>
+
+<div id="container">
+    {block:Posts}
+    <div class="posts" id="{PostID}">
+    
+        <!---- TEXT POSTS ---->
+        {block:Text}
+        <div class="text-block">
+            {block:Title}
+            <h3><a href="{Permalink}">{Title}</a></h3>
+            {/block:Title}
+            
+            {block:NotReblog}
+            <div class="text-body">
+                {Body}
+            </div>
+            {/block:NotReblog}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}    
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end text-block-->
+        {/block:Text}
+
+        <!---- PHOTO POSTS ---->
+        {block:Photo}
+        <div class="photo-block">
+            {LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="500">{LinkCloseTag}
+            
+            {block:Caption}
+            {block:NotReblog}
+            <div class="caption">
+                {Caption}
+            </div>
+            {/block:NotReblog}
+            {/block:Caption}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end photo-block-->
+        {/block:Photo}
+        
+        <!---- PHOTOSET POSTS ---->
+        {block:Photoset}
+        <div class="photoset-block">
+            {Photoset-500}
+            
+            {block:Caption}
+            {block:NotReblog}
+            <div class="caption">
+                {Caption}
+            </div>
+            {/block:NotReblog}
+            {/block:Caption}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end photoset-block-->
+        {/block:Photoset}
+        
+        <!---- QUOTE POSTS ---->
+        {block:Quote}
+        <div class="quote-block">
+            <figure class="quote-set">
+                <blockquote class="quote-text">
+                    <p>{Quote}</p>
+                </blockquote>
+                
+                {block:Source}
+                <figcaption class="quote-source">
+                    <cite>{Source}</cite>
+                </figcaption>
+                {/block:Source}
+            </figure>
+        </div><!--end quote-block-->
+        {/block:Quote}
+        
+        <!---- LINK POSTS ---->
+        {block:Link}
+        <div class="link-block">
+            <h2>
+                <a href="{URL}" class="external-link" {Target}>{Name}</a>
+            </h2>
+            
+            {block:Description}
+            {block:NotReblog}
+            <div class="caption">
+                {Description}
+            </div>
+            {/block:NotReblog}
+            {/block:Description}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end link-block-->
+        {/block:Link}
+        
+        <!---- CHAT POSTS ---->
+        {block:Chat}
+        <div class="chat-block">
+            {block:Title}
+            <h3>
+                <a href="{Permalink}">{Title}</a>
+            </h3>
+            {/block:Title}
+            
+            <ul class="chat">
+                {block:Lines}
+                    <li class="{Alt}">
+                        {block:Label}
+                        <b>{Label}</b>
+                        {/block:Label}
+                        
+                        <span>{Line}</span>
+                    </li>
+                {/block:Lines}
+            </ul>
+        </div><!--end chat-block-->
+        {/block:Chat}
+        
+        <!---- AUDIO POSTS ---->
+        {block:Audio}
+        <div class="audio-block">
+            {block:AudioEmbed}
+            {AudioEmbed}
+            {/block:AudioEmbed}
+            
+            {block:Caption}
+            {block:NotReblog}
+            <div class="caption">
+                {Caption}
+            </div>
+            {/block:NotReblog}
+            {/block:Caption}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end audio-block-->
+        {/block:Audio}
+        
+        <!---- VIDEO POSTS ---->
+        {block:Video}
+        <div class="video-block">
+            {Video-500}
+            
+            {block:Caption}
+            {block:NotReblog}
+            <div class="caption">
+                {Caption}
+            </div>
+            {/block:NotReblog}
+            {/block:Caption}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end video-block-->
+        {/block:Video}
+        
+        <!---- ASK POSTS ---->
+        {block:Answer}
+        <div class="ask-block">
+            <div class="question">
+                <div class="question-header">
+                    <img class="asker-avatar" src="{AskerPortraitURL-64}">
+                    <div class="asker">{lang:Asker asked 2}:</div>
+                </div>
+                
+                <div class="question-content">{Question}</div>
+            </div>
+            
+            {block:Answerer}
+            <div class="answer">
+                <div class="answer-header">
+                    <img class="answerer-avatar" src="{AnswererPortraitURL-64}">
+                    <div class="answerer">
+                        <a href="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}">{lang:Answered}</a>
+                    </div>
+                </div>
+                
+                <div class="answer-content">{Answer}</div>
+            </div>
+            {/block:Answerer}
+            
+            {block:Replies}
+            {block:NotReblog}
+            <div class="caption">
+                {Replies}
+            </div>
+            {/block:NotReblog}
+            {/block:Replies}
+            
+            {block:RebloggedFrom}
+            {block:Reblogs}
+            <div class="reblog-entry">
+                <div class="reblog-user-header">
+                    <img src="{PortraitURL-64}">
+                    <a href="{Permalink}">{Username}</a>
+                </div>
+                
+                <div class="reblog-content">
+                    {Body}
+                </div>
+            </div><!--end reblog-entry-->
+            {/block:Reblogs}
+            {/block:RebloggedFrom}
+        </div><!--end ask-block-->
+        {/block:Answer}
+        
+        <!---- POST FOOTER / INFO BAR ---->
+        {block:Date}
+        <footer>
+            <!-- post footer: left: "posted" or "reblogged" -->
+            <a href="{Permalink}">
+                {block:NotReblog}
+                {PostAuthorName} posted this
+                {/block:NotReblog}
+                
+                {block:RebloggedFrom}
+                {PostAuthorName} reblogged this
+                {/block:RebloggedFrom}
+            </a>
+            
+            <!-- post footer: right: original poster name -->
+            <a href="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}">
+                {block:NotReblog}
+                Original post
+                {/block:NotReblog}
+                
+                {block:RebloggedFrom}
+                by {ReblogRootName}
+                {/block:RebloggedFrom}
+                
+                (<span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootName}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>)
+            </a>
+        </footer><!--end post-footer-->
+        {/block:Date}
+    
+    </div><!--end posts-->
+    
+    <hr/>
+    {/block:Posts}
+</div><!--end container-->
+
+</body>
+</html>
+
+</body>
+</html>

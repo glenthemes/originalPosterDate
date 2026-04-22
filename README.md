@@ -97,7 +97,7 @@ Example:
 {/block:Posts}
 ```
 
-If you're puzzled about the structure, you can check out the [🧪 Example theme code](#example-theme-code) if it helps!
+If you're puzzled about the structure, you can check out the theme codes provided in [👁️ Demos + Previews](#%EF%B8%8Fdemos--previews)!
 
 ♦️ **Step 3:** Using that location, add the following:
 ```html
