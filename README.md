@@ -2,7 +2,7 @@
 
 ![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/banner-r.png)
 
-###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/21 8:42PM [PST]
+###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/21 11:02PM [PST]
 
 ---
 
@@ -11,6 +11,7 @@
 - 📝 [Important notes](#important-notes)
 - 🧪 [Example theme code](#example-theme-code)
 - 🚀 [How to install](#how-to-install)
+- 🧨 [Further usage](#further-usage)
 - 💖 [Attribution](#attribution)
 - 🙋 [Questions?](#questions)
 
@@ -18,7 +19,7 @@
 
 ### 💭 About:
 
-A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"` to an element within a `{block:RebloggedFrom}` context.
+A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. Works for original posts and reblogs.
 
 💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
 
@@ -69,16 +70,13 @@ originalPosterDate({
 ♦️ **Step 2:** Pinpoint where you'd like to display the original post's date. A common location would be the post's footer bar, but there's no rule of thumb as long as it resides within the following blocks/context:
 * `{block:Posts}`
 * `{block:Date}`
-* `{block:RebloggedFrom}`
 
 Example:
 ```html
 {block:Posts}
 <article class="posts">
     {block:Date}
-    {block:RebloggedFrom}
     <footer class="date-bar"> ... </footer>
-    {/block:RebloggedFrom}
     {/block:Date}
 </article>
 {/block:Posts}
@@ -88,7 +86,7 @@ If you're puzzled about the structure, you can check out the [🧪 Example the
 
 ♦️ **Step 3:** Using that location, add the following:
 ```html
-<span data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"></span>
+<span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootName}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>
 ```
 
 Using the above HTML markup's example, it would now look something like this:
@@ -96,17 +94,36 @@ Using the above HTML markup's example, it would now look something like this:
 {block:Posts}
 <article class="posts">
     {block:Date}
-    {block:RebloggedFrom}
     <footer class="date-bar">
-        <span data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"></span>
+        <span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootName}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>
     </footer>
-    {/block:RebloggedFrom}
     {/block:Date}
 </article>
 {/block:Posts}
 ```
 
 And done! If nothing is showing up, please read the [📝 Important notes](#important-notes) section.
+
+---
+
+### 🧨 Further usage:
+
+**Note:** JavaScript knowledge required.
+
+If you'd just like to retrieve the timestamp and process it yourself (e.g. show `05` instead of `May`), you can edit the function call like this:
+```javascript
+originalPosterDate({
+    // your options as normal
+})
+.then(elements => {
+    elements?.forEach(el => {
+        let timestamp = el.dataset.timestamp // gets the timestamp from the [data-timestamp] attribute
+        console.log(timestamp) // do something with the timestamp
+    })
+})
+```
+
+[Here's](https://www.w3schools.com/jsref/jsref_obj_date.asp) a resource about parsing date & time if you're interested.
 
 ---
 
