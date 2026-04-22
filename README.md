@@ -34,7 +34,8 @@ A barebones theme example with this plugin installed:
 [glenthemes.github.io/originalPosterDate/example-theme-code.txt](https://glenthemes.github.io/originalPosterDate/example-theme-code.txt)
 
 **Credits:**
-* [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching.
+* [axios](https://axios-http.com) for [Tumblr API v1](https://www.tumblr.com/docs/en/api/v1) fetching
+* [ordinal suffixes for dates in JS](https://xjavascript.com/blog/javascript-new-date-ordinal-st-nd-rd-th/#step-2-implement-the-code)
 * Photo in preview by [gregorsams](https://gregorsams.tumblr.com/post/68296679771)
 
 ---
