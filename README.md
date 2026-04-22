@@ -24,7 +24,7 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 ### 📝 Important notes:
 * Only works if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off* (gray).
-![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.webp)
+![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.png)
 * Will not work if the original poster's blog has been deleted/deactivated.
 * Does not work in the customize page view (works fine if you visit your blog directly!).
 
