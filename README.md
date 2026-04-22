@@ -19,13 +19,13 @@
 
 ### 💭 About:
 
-A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. Works for original posts and reblogs.
+A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. Works for original posts and as well as [reblogs (trails)](https://glenthemes.github.io/originalPosterDate/reblog-trails.png).
 
 💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
 
 **How it works:**
 1. We set a custom attribute (`data-original-poster`) for the original poster's username, and another custom attribute (`data-original-post-link`) for the original post's link.
-2. Fetches the original poster's Tumblr blog API, parses the variable it returns as a [JSON object](https://www.w3schools.com/whatis/whatis_json.asp)
+2. Fetches the original poster's [Tumblr blog API](https://www.tumblr.com/docs/en/api/v1), parses the variable it returns as a [JSON object](https://www.w3schools.com/whatis/whatis_json.asp)
 3. Finds `unix-timestamp` value within the object
 4. Formats the unix timestamp into something that's human readable
 
@@ -44,9 +44,9 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 ---
 
-### 🧪 Example theme code:
-A barebones theme example with this plugin installed:  
-[glenthemes.github.io/originalPosterDate/example-theme-code.txt](https://glenthemes.github.io/originalPosterDate/example-theme-code.txt)
+### 🧪 Example theme codes:
+* A barebones theme example that only gets the original poster's date:<br/>[glenthemes.github.io/originalPosterDate/example/theme-code-basic.txt](https://glenthemes.github.io/originalPosterDate/example/theme-code-basic.txt)
+* A more complex theme example that gets [each reblog's date](https://glenthemes.github.io/originalPosterDate/reblog-trails.png) too:<br/>[glenthemes.github.io/originalPosterDate/example/theme-code-reblogs.txt](https://glenthemes.github.io/originalPosterDate/example/theme-code-reblogs.txt)
 
 ---
 
