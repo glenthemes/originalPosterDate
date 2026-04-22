@@ -45,18 +45,8 @@ a {
         
         <!---- POST FOOTER / INFO BAR ---->
         {block:Date}
-        <footer>
-            {block:NotReblog}
-            <a href="{Permalink}">
-                {TimeAgo}
-            </a>
-            {/block:NotReblog}
-            
-            {block:RebloggedFrom}
-            <a href="{ReblogRootURL}">
-                Posted by {ReblogRootName} on <span data-original-poster="{ReblogRootName}" data-original-post-link="{ReblogRootURL}"></span>
-            </a>
-            {/block:RebloggedFrom}
+        <footer class="date-bar">
+            <span data-original-poster="{block:NotReblog}{Name}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootName}{/block:RebloggedFrom}" data-original-post-link="{block:NotReblog}{Permalink}{/block:NotReblog}{block:RebloggedFrom}{ReblogRootURL}{/block:RebloggedFrom}"></span>
         </footer>
         {/block:Date}<!--end post footer-->
     
