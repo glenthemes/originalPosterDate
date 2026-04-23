@@ -59,7 +59,7 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 
 The following instructions are for showing the original poster's date only. You are welcome to view the [example theme code for reblogs](https://glenthemes.github.io/originalPosterDate/theme-code/reblogs.txt), just bear in mind that it uses modern captions and not old/legacy ones.
 
-♦️ **Step 1:** Add the after `<head>` in your theme:
+♦️ **Step 1:** Add the following after `<head>` in your theme:
 ```html
 <script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -158,4 +158,12 @@ If you run into any issues or need help, please reach out to me via my [Discord]
 
 Checklist of things to include when asking for help:
 - A link to your blog, e.g. `https://glen-px.tumblr.com`
+- A link to the post(s) where the original poster dates aren't showing up
 - Send your **full** theme code (tutorial: [glenthemes.notion.site/dpaste-tutorial](https://glenthemes.notion.site/dpaste-tutorial))!
+
+---
+
+### 💖 That's it!
+
+If you found this plugin helpful, please consider leaving me a tip, it helps me out a lot!<br/>
+[ko-fi.com/glenthemes](https://ko-fi.com/glenthemes)
