@@ -38,8 +38,8 @@ window.originalPosterDate = async (options) => {
       
       // if: dashboard-only view
       // post ID resides immediately after the username
-      if(url.includes(`//www.tumblr.com/${ name }/`)){
-        OGPostID = url.split(`//www.tumblr.com/${ name }/`)[1]
+      if(url.includes(`//www.tumblr.com/${name}/`)){
+        OGPostID = url.split(`//www.tumblr.com/${name}/`)[1]
       }
       
       // if: blog has custom theme
@@ -53,6 +53,8 @@ window.originalPosterDate = async (options) => {
         if(OGPostID.indexOf("/") > -1){
           OGPostID = OGPostID.split("/")[0]
         }
+
+        let API_link = `https://${name}.tumblr.com/api/read/json?id=${OGPostID}`
         
         // fetch user's API for the original post only
         // will only work if:
@@ -61,7 +63,7 @@ window.originalPosterDate = async (options) => {
         promises.push((async () => {
           try {
             // fetch with axios bc tumblr doesn't obey normal fetch() sometimes
-            let rez = await axios.get(`https://${ name }.tumblr.com/api/read/json?id=${ OGPostID }`);
+            let rez = await axios.get(API_link)
             let res = rez.data.trim()
 
             // read the fetched result as a JSON object after ensuring that "var tumblr_api_read" exists
@@ -96,14 +98,15 @@ window.originalPosterDate = async (options) => {
                 if(locale.startsWith("en")){
                   if(dayWithSuffix){
                     let suffix = getSuffix(day.toString().startsWith("0") ? Number(day.slice(1)) : day)
-                    day = `${ day }${ suffix }`
+                    day = `${day}${suffix}`
                   }
                 }
                 
                 // the final output
                 // e.g. January 27th, 2016
-                let formatted = `${ month } ${ day }, ${ yr }`
-                piece.dataset.timestamp = timestamp * 1000 // records e.g. data-timestamp="1770581273"
+                let formatted = `${month} ${day}, ${yr}`
+                piece.dataset.timestamp = timestamp * 1000 // records e.g. [data-timestamp="1770581273"]
+                piece.dataset.postApiLink = API_link
                 piece.textContent = formatted
                 piece.classList.add("fetched","fetch-ok")
               }

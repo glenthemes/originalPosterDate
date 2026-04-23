@@ -2,7 +2,7 @@
 
 ![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/banner-r.png)
 
-###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/21 11:02PM [PST]
+###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/22 4:59PM [PST]
 
 ---
 
@@ -19,9 +19,9 @@
 
 ### 💭 About:
 
-A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. Works for original posts and as well as [reblogs (trails)](https://glenthemes.github.io/originalPosterDate/reblog-trails.png).
+A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. **Works for original posts and as well as reblogs!**
 
-💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
+![Screenshot of a post consisting of the original post and two additional reblogs with comments. The first entry (the original post) shows that it was posted on September 04th 2021. The first reblog (so the second entry overall) shows that it was reblogged on September 27th 2021. The second reblog (so the third entry overall) shows that it was reblogged on March 18th 2026](https://glenthemes.github.io/originalPosterDate/reblog-trails-450-r.png)
 
 **How it works:**
 1. We set a custom attribute (`data-original-poster`) for the original poster's username, and another custom attribute (`data-original-post-link`) for the original post's link.
@@ -40,7 +40,9 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 * Only works if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off* (gray).
 ![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.png)
 * Will not work if the original poster's blog has been deleted/deactivated.
-* Does not work in the customize page view (works fine if you visit your blog directly!).
+* Does not work in the customize page view (works fine if you visit your blog directly).
+
+💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
 
 ---
 
