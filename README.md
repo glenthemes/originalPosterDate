@@ -19,7 +19,7 @@
 
 ### 💭 About:
 
-A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding `data-original-poster="..." data-original-post-link="..."` to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. **Works for original posts and as well as reblogs!**
+A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{DayOfMonthSuffix}, {Year}` format) by adding the poster's username and post link as custom data attributes to an element within a `{block:NotReblog}` or `{block:RebloggedFrom}` context. **Works for original posts and as well as reblogs!**
 
 ![Screenshot of a post consisting of the original post and two additional reblogs with comments. The first entry (the original post) shows that it was posted on September 04th 2021. The first reblog (so the second entry overall) shows that it was reblogged on September 27th 2021. The second reblog (so the third entry overall) shows that it was reblogged on March 18th 2026](https://glenthemes.github.io/originalPosterDate/reblog-trails-450-r.png)
 
@@ -40,6 +40,7 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 * Only works if the original poster's blog has "**Visibility**" > **"Hide {Name} from people without an account"** turned *off* (gray).
 ![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.png)
 * Will not work if the original poster's blog has been deleted/deactivated.
+* Will not work if the original poster deleted the post (even if their blog is still active).
 * Does not work in the customize page view (works fine if you visit your blog directly).
 
 💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
@@ -78,7 +79,7 @@ originalPosterDate({
 
 | Option name | Details |
 | --- | --- |
-| `langLocaleCode` | The output date's language/local code. Some examples can be found [here](https://developer.atlassian.com/platform/forge/manifest-reference/forge-supported-locale-codes/). |
+| `langLocaleCode` | The output date's language/locale code. Some examples can be found [here](https://developer.atlassian.com/platform/forge/manifest-reference/forge-supported-locale-codes/). |
 | `shortMonth` | &#x29BF; `true` for the short form of the month (e.g. **Feb**)<br/>&#x29BF; `false` for regular month text (e.g. **February**) |
 | `dayWithZero` | &#x29BF; `true` adds `0` to single-digit days (e.g. **09**)<br/>&#x29BF; `false` for regular days (e.g. **9**) |
 | `dayWithSuffix` | &#x29BF; `true` adds suffixes to days (English only) (e.g. **9th**, **1st**, **3rd**)<br/>&#x29BF; `false` does not add suffixes (e.g. **9**, **1**, **3**) |
