@@ -148,7 +148,7 @@ originalPosterDate({
 
 ### 💖 Attribution:
 
-If you are a theme maker, please include a link to either [this repository](https://github.com/glenthemes/originalPosterDate) or [my Tumblr blog](https://glenthemes.tumblr.com) on your theme's post or credits page! Thank you.
+If you are a theme maker, please include a link to either [this repository](https://github.com/glenthemes/originalPosterDate), [my Tumblr post](https://glenthemes.tumblr.com/post/814647006208360448/originalposterdate) or [my Tumblr blog](https://glenthemes.tumblr.com) on your theme's post or credits page! Thank you.
 
 ---
 
