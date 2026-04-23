@@ -106,7 +106,6 @@ window.originalPosterDate = async (options) => {
                 // e.g. January 27th, 2016
                 let formatted = `${month} ${day}, ${yr}`
                 piece.dataset.timestamp = timestamp * 1000 // records e.g. [data-timestamp="1770581273"]
-                piece.dataset.postApiLink = API_link
                 piece.textContent = formatted
                 piece.classList.add("fetched","fetch-ok")
               }
@@ -115,7 +114,8 @@ window.originalPosterDate = async (options) => {
             piece.classList.add("fetched","fetch-failed")
           }
         })());//end fetch + add to array
-          
+
+        piece.dataset.postApiLink = API_link // records the post API link it tried to fetch (regardless of it was successful or not)
       }//end: has validpost ID
       else {
         piece.classList.add("fetched","fetch-failed")
