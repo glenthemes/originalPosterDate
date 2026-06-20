@@ -5,7 +5,7 @@
 ###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/22 4:59PM [PST]
 
 > [!TIP]
-> Version 2 is here (does not rely on axios)!
+> [Version 2](https://github.com/glenthemes/originalPosterDate#README) is here (does not rely on axios)!
 
 ---
 
