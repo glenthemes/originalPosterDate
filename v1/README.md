@@ -139,8 +139,8 @@ originalPosterDate({
 .then(elements => {
     elements?.forEach(el => {
         let date = new Date(Number(el.dataset.timestamp)) // gets the timestamp from the [data-timestamp] attribute
-        let monthNumber = date.getMonth() // e.g. get the month number
-        console.log(monthNumber) // e.g. do something with the month number
+        let year = date.getFullYear() // e.g. get the year
+        console.log(year) // e.g. do something with the year
     })
 })
 ```

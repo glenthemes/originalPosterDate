@@ -2,7 +2,7 @@
 
 ![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/banner-r.png)
 
-###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/06/20 8:30AM [PDT]
+###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/06/20 9:48AM [PDT]
 
 > [!TIP]
 > Version 2 is here (does not rely on axios)!
@@ -137,8 +137,8 @@ originalPosterDate({
 .then(elements => {
     elements?.forEach(el => {
         let date = new Date(Number(el.dataset.timestamp)) // gets the timestamp from the [data-timestamp] attribute
-        let monthNumber = date.getMonth() // e.g. get the month number
-        console.log(monthNumber) // e.g. do something with the month number
+        let year = date.getFullYear() // e.g. get the year
+        console.log(year) // e.g. do something with the year
     })
 })
 ```
