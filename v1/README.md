@@ -2,11 +2,10 @@
 
 ![Preview of a photo posted by gregorsams from November 27th 2013. The post has been reblogged by glen-px on April 21st 2026, indicating the time difference betweenthe original posting date and the date at which the current reblog took place.](https://glenthemes.github.io/originalPosterDate/banner-r.png)
 
-###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/06/20 8:30AM [PDT]
+###### ✦ Written by **@⁠glenthemes** [2026]<br/>✦ **Last updated:** 2026/04/22 4:59PM [PST]
 
 > [!TIP]
 > Version 2 is here (does not rely on axios)!
-> If you would still like to use version 1 (axios), please read [these instructions](https://github.com/glenthemes/originalPosterDate/tree/main/v1).
 
 ---
 
@@ -45,7 +44,7 @@ A plugin that shows the original post's date (in `{Month} {DayOfMonthWithZero}{D
 ![Screenshot of a blog’s Tumblr settings with “Hide your blog name from people without an account” disabled such that the toggle turns gray.](https://glenthemes.github.io/originalPosterDate/vis.png)
 * Will not work if the original poster's blog has been deleted/deactivated.
 * Will not work if the original poster deleted the post (even if their blog is still active).
-* ~~Does not work in the customize page view (works fine if you visit your blog directly)~~ 👈 only an issue if you're using [version 1](https://github.com/glenthemes/originalPosterDate/tree/main/v1) (version 2 i.e. the current version doesn't have this issue)
+* Does not work in the customize page view (works fine if you visit your blog directly).
 
 💡 Basic HTML knowledge and [Tumblr docs](https://www.tumblr.com/docs/en/custom_themes) knowledge is recommended.
 
@@ -65,9 +64,11 @@ The following instructions are for showing the original poster's date only. You 
 
 ♦️ **Step 1:** Add the following after `<head>` in your theme:
 ```html
+<script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 <!-----  originalPosterDate by glenthemes  ----->
 <!-- github.com/glenthemes/originalPosterDate -->
-<script src="//glenthemes.github.io/originalPosterDate/v2/dates.js"></script>
+<script src="//glenthemes.github.io/originalPosterDate/dates.js"></script>
 <script>
 originalPosterDate({
     langLocaleCode: "en", // language (locale) code

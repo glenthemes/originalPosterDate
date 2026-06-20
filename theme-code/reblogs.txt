@@ -6,12 +6,9 @@
 <title>{Title}</title>
 <link rel="shortcut icon" href="{Favicon}">
 
-<!-- axios -->
-<script src="//cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
 <!-----  originalPosterDate by glenthemes  ----->
 <!-- github.com/glenthemes/originalPosterDate -->
-<script src="//glenthemes.github.io/originalPosterDate/dates.js"></script>
+<script src="//glenthemes.github.io/originalPosterDate/v2/dates.js"></script>
 <script>
 originalPosterDate({
     langLocaleCode: "en", // language (locale) code
